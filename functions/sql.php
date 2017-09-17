@@ -7,3 +7,14 @@ function sql_select(){
 
     return $res;
 }
+
+
+function sql_insert(){
+
+    $connection = mysqli_connect('localhost', 'root', '', 'news_bd');
+
+    mysqli_query($connection, "INSERT INTO articles (`title`,`article`) VALUES ('".$_POST['title']."','".$_POST['text']."')");
+
+}
+
+?>
